@@ -73,7 +73,7 @@ export const ProductList = ({ products }: Props) => {
       {/* Results count */}
       {searchTerm && (
         <p className="mb-4 text-sm text-muted-foreground">
-          {filtered.length} result{filtered.length !== 1 ? "s" : ""} for "{searchTerm}"
+          {filtered.length} result{filtered.length !== 1 ? "s" : ""} for {'"'}{searchTerm}{'"'}
         </p>
       )}
 
