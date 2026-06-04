@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-// @ts-ignore
+// @ts-expect-error
+
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
