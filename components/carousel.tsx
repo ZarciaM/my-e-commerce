@@ -1,7 +1,7 @@
 "use client";
 
 import Stripe from "stripe";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -24,17 +24,19 @@ export const Carousel = ({ products }: Props) => {
     setImageLoaded(false);
   };
   
-  const next = () => {
-    setCurrent((c) => (c + 1) % products.length);
-    setImageLoaded(false);
-  };
-
+ 
+const next = useCallback(() => {
+  setCurrent((c) => (c + 1) % products.length);
+  setImageLoaded(false);
+}, [products.length]);
   // Auto-play
+
+
   useEffect(() => {
-    if (paused || products.length <= 1) return;
-    const id = setInterval(next, 5000);
-    return () => clearInterval(id);
-  }, [products.length, paused]);
+  if (paused || products.length <= 1) return;
+  const id = setInterval(next, 5000);
+  return () => clearInterval(id);
+}, [products.length, paused, next]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);
