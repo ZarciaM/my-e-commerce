@@ -18,8 +18,8 @@ export default function SuccessPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">Payment Successful! 🎉</h1>
         <p className="text-muted-foreground max-w-sm">
-          Thank you for your purchase. You'll receive a confirmation email shortly.
-        </p>
+  Thank you for your purchase. You&apos;ll receive a confirmation email shortly.
+</p>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 mt-2">
         <Button asChild className="rounded-full gradient-accent text-white border-0 hover:opacity-90">
