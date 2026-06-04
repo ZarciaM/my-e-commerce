@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error missing type definition
 
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
